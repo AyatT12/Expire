@@ -30,8 +30,7 @@
     .card {
       background: #ffffff;
       border-radius: 28px;
-      padding: 48px 40px 40px;
-      max-width: 420px;
+      max-width: 520px;
       width: 100%;
       text-align: center;
       border: 0.5px solid #39629c;
@@ -39,15 +38,17 @@
       direction: rtl;
     }
 
+    .cardContent {
+      padding: 0px 32px 32px;
+    }
+
     .logo-ring {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      margin: 0 auto 10px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      justify-content: start;
+      color: #39629c;
+      padding: 24px;
+      gap: 12px;
     }
 
     .logo-ring img {
@@ -56,92 +57,38 @@
       object-fit: contain;
     }
 
-    .logo-fallback {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
+    .logo-text {
+      text-align: start;
     }
-
-    .logo-fallback i {
-      font-size: 32px;
-      color: #ffce94;
+    .Ar_text{
+      font-size: 17px;
     }
-
-    .logo-fallback span {
-      font-size: 11px;
-      color: #39629c;
-      font-weight: 500;
-    }
-
-    .badge-pill {
-      display: inline-block;
-      color: #A32D2D;
+    .En_text{
       font-size: 12px;
-      font-weight: 500;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
     }
-
-    .badge-pill i {
-      font-size: 13px;
-      vertical-align: -2px;
-      margin-left: 4px;
-    }
-
     h1 {
       font-size: 20px;
       font-weight: 700;
-      color: #39629c;
-      margin-bottom: 14px;
+      color: #b40202;
       line-height: 1.5;
     }
 
-    .desc {
-      font-size: 14px;
-      color: #39629c;
-      line-height: 1.9;
-      margin-bottom: 15px;
+    .title p {
+      color: #b40202;
+      font-weight: 600;
     }
 
-    .desc strong {
+    .desc {
+      font-size: 15px;
       color: #39629c;
+      line-height: 1.9;
+      margin-bottom: 1px;
     }
 
     hr {
       border: none;
       border-top: 0.5px solid #39629c;
       margin-bottom: 24px;
-    }
-
-    .svc {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .svc-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: #EEEDFE;
-      border: 0.5px solid #39629c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .svc-icon i {
-      font-size: 20px;
-      color: #39629c;
-    }
-
-    .svc span {
-      font-size: 11px;
-      color: #7F77DD;
-      font-weight: 500;
     }
 
     .btn-main {
@@ -174,8 +121,20 @@
 
     @media (max-width: 576px) {
       .card {
-        padding: 20px !important;
+        padding: 15px !important;
       }
+      .logo-ring{
+        padding: 0 !important;
+        gap: 5px;
+      }
+      .cardContent{
+        padding: 0 !important;
+      }
+       .btn-main {
+        padding: 12px 18px !important;
+        font-size: 13px !important;
+      }
+
     }
   </style>
 </head>
@@ -183,28 +142,29 @@
 <body>
 
   <div class="card">
-    <div class="logo-ring" id="logoRing">
+    <div class="logo-ring">
       <img id="logoImg" src="Logo.svg" alt="شعار بنان" />
+      <div class="logo-text">
+        <p class="Ar_text mb-1">بنان لإدارة شركات ومكاتب تأجير السيارات</p>
+        <p class="En_text">Bnan for managing car rental companies and offices</p>
+      </div>
     </div>
 
-    <div class="badge-pill">
-      <i class="ti ti-clock-off"></i>
-      انتهت الصلاحية
+    <div class="cardContent">
+      <div class="title">
+        <h1 class="mb-1">عفواً، انتهت صلاحية الرابط</h1>
+        <p dir="ltr" style="font-size: 12px;">Sorry, the link has expired.</p>
+      </div>
+      <p class="desc">بامكانك البحث من خلال الموقع</p>
+      <p class="desc" dir="ltr" style="font-size: 12px;">You can search through the website.</p>
+
+      <hr />
+
+      <a href="https://bnan.ghyum.sa/#/document-check" class="btn-main">
+        <i class="ti ti-search"></i>
+       الموقع
+      </a>
     </div>
-
-    <h1>عفواً، انتهت صلاحية الرابط</h1>
-
-    <p class="desc">
-      بإمكانك الاطلاع على <strong>العقود والفواتير</strong> وسندات القبض والصرف
-      من خلال موقع <strong>بنان</strong> لإدارة شركات ومكاتب تأجير السيارات
-    </p>
-
-    <hr />
-
-    <a href="https://bnan.ghyum.sa/#/document-check" class="btn-main">
-      <i class="ti ti-search"></i>
-      البحث عن المستندات
-    </a>
   </div>
 </body>
 
